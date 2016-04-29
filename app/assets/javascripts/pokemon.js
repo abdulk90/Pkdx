@@ -15,14 +15,23 @@ PokemonApp.Pokemon.prototype.render = function () {
 		success: function (response) {
 			self.info = response;
 
+
 			console.log("pokemon info:");
 			console.log(self.info);
 
+			
+			$(".js-pkmn-name").text(self.info.name);
+			$(".js-pkmn-number").text("#" + self.info.pkdx_id);
+			$(".js-pkmn-height").text(self.info.height);
+			$(".js-pkmn-weight").text(self.info.weight);
+			$(".js-pkmn-hp").text(self.info.hp);
+			$(".js-pkmn-attack").text(self.info.attack);
+			$(".js-pkmn-defense").text(self.info.defense);
+			$(".js-pkmn-sp_atk").text(self.info.sp_atk);
+			$(".js-pkmn-sp_def").text(self.info.sp_def);
+			$(".js-pkmn-speed").text(self.info.speed);
+
 			$(".js-pokemon-modal").modal("show");
-			// $(".js-pkmn-name").text(self.info.name);
-			// $(".js-pkmn-number").text(self.info.pkdx_id);
-			// $(".js-pkmn-height").text(self.info.height);
-			// $(".js-pkmn-weight").text(self.info.weight);
 		}
 	})
 };
